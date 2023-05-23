@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header py-3">
+      Login Form
+  </div>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="card-body">
+      <div class="row p-4">
+        <div class="col-md-2">
+           Email
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" [(ngModel)] = "user.userEmail" name="userEmail" id="userEmail" placeholder="Email">
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-md-2">
+           Password
+        </div>
+        <div class="col-md-6">
+          <input type="password" class="form-control" [(ngModel)] = "user.userPassword" name="userPassword" id="userPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="submit" style="float:right;"><i class="fa fa-paper-plane"></i>Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header p-3">
+      <div class="row">
+          <div class="col-md-6">
+              List of All Data
+          </div>
+          <div class="col-md-6">
+              <a *ngIf="userRole==1" class="btn btn-primary" style="float: right;" routerLink="/createNewTender">Create New Tender</a>
+          </div>
+      </div>
+  </div>
+  <div class="card-body">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Tender Name</th>
+        <th scope="col">Auction Starting Time</th>
+        <th scope="col">Auction Ending Time</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let tnd of tender">
+        <th scope="row">{{ tnd.id }}</th>
+        <td> {{ tnd.tenderName }} </td>
+        <td> {{ tnd.startTime }} </td>
+        <td> {{ tnd.endTime }} </td>
+        <td>
+          <button *ngIf="!(tnd.isStarted == 1) && !(tnd.isClosed == 1) && userRole==1" (click) = "startOction(tnd.id)"  class = "btn btn-success"><i class="fa fa-check"></i> Start Auction </button>
+          <button *ngIf="(tnd.isStarted == 1) && !(tnd.isClosed == 1) && userRole==1" (click) = "tenderWiseBid(tnd.id)"  class = "btn btn-primary"><i class="fa fa-eye"></i> View Bids </button>
+          <button *ngIf="tnd.isStarted == 1 && !(tnd.isClosed == 1) && userRole!=1" (click) = "bidSubmission(tnd.id)" class = "btn btn-dark" style="margin-left: 10px"><i class="fa fa-paper-plane"></i> Bit Submission </button>
+          <button *ngIf="!(tnd.isClosed == 1) && (tnd.isStarted == 1) && userRole==1" (click) = "closeOction(tnd.id)" class = "btn btn-danger" style="margin-left: 10px"><i class="fa fa-times"></i> Close Auction</button>
+          <div *ngIf="(tnd.isClosed == 1) && (tnd.isStarted == 1)" class="alert alert-success"> Auction Completed !!</div>
+          <div *ngIf="tnd.isClosed != 1 && tnd.isStarted != 1 && userRole!=1 " class="alert alert-success"> Tender is no started yet</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

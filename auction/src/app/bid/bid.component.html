@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+      Bid Submission Form
+  </div>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="card-body">
+      <div class="row p-4">
+        <div class="col-md-2">
+          Enter Amount
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" [(ngModel)] = "bid.bidAmount" name="bidAmount" id="bidAmount" placeholder="Bid Amount">
+          <input type="hidden" value="{{id}}" [(ngModel)] = "bid.tenderId" name="tenderId" id="tenderId">
+          <input type="hidden" value="{{userId}}" [(ngModel)] = "bid.userId" name="userId" id="userId">
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary"> <i class="fa fa-paper-plane"></i> Submit Your Bid</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,39 @@
+
+<div class="card">
+  <div class="card-header">
+      Create New Tender
+  </div>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="card-body">
+      <div class="row p-4">
+        <div class="col-md-3">
+          Tender Name
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" [(ngModel)] = "tender.tenderName" name="tenderName" id="tenderName" placeholder="Tender Name">
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-md-3">
+          Auction Starting Date Time
+        </div>
+        <div class="col-md-6">
+          <input type="datetime-local" class="form-control" [(ngModel)] = "tender.startTime"  name="startTime" id="startTime">
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-md-3">
+          Auction Ending Date Time
+        </div>
+        <div class="col-md-6">
+          <input type="datetime-local" class="form-control" [(ngModel)] = "tender.endTime"  name="endTime" id="endTime">
+        </div>
+      </div>
+      <div class="row p-4">
+        <div class="col-md-9">
+          <button style="float: right;" type="submit" class="btn btn-primary"> <i class="fa fa-paper-plane"></i> Create </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

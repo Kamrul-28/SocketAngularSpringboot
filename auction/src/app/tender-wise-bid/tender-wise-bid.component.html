@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header p-3">
+      List of All Data
+  </div>
+  <div class="card-body">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Tender Name</th>
+        <th scope="col">Tenderer Name</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let tnd of bid$">
+        <th scope="row">{{ tnd.id }}</th>
+        <td> {{ tnd.tenderId }} </td>
+        <td> {{ tnd.userId }} </td>
+        <td> {{ tnd.bidAmount }} </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
