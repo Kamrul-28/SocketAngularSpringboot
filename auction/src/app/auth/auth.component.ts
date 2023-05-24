@@ -28,7 +28,6 @@ export class AuthComponent {
           sessionStorage.setItem('userRole', response.userRole);
         }
         this.goToTenderHome();
-        location.reload();
       }
       , error => console.log(error));
     }

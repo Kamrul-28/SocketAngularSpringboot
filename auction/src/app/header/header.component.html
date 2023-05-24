@@ -1,20 +1,53 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg px-5 py-3 my-3" style="background-color: #82B35A;color: white;">
-    <img src="../../assets/cptuEgpLogo.gif" alt="Logo" style="margin-right: 20px;;">
-    <a style="color: white;" routerLink="home" class="navbar-brand">Tender Auction</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="page-wrapper">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li *ngIf="isLoggedin==1" class="nav-item active">
-          <a style="color: white;" routerLink="tender" routerLinkActive="active" class="nav-link">Tenders</a>
-        </li>
-      </ul>
+  <!-- MENU SIDEBAR-->
+  <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+      <a href="#">
+        <img src="../assets/cptuEgpLogo.gif" alt="luv2shop" class="img-responsive">
+      </a>
     </div>
-    <a *ngIf="!isLoggedin && isLoggedin != 1" class="btn" style="background-color: #006600; color: white;" routerLink="login">Login</a>
-    <a *ngIf="isLoggedin && isLoggedin == 1" class="btn" style="background-color: #FE0000; color: white;" (click)="logout()">Logout</a>
-  </nav>
-  <router-outlet></router-outlet>
+    <div class="menu-sidebar-content js-scrollbar1">
+      <nav class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+          <li class="nav-item active">
+            <a routerLink="home" routerLinkActive="active" class="nav-link">Home</a>
+          </li>
+          <li *ngIf="isLoggedin==1" class="nav-item active">
+            <a routerLink="tender" routerLinkActive="active" class="nav-link">Tenders</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <!-- PAGE CONTAINER-->
+  <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+      <div class="section-content section-content-p30">
+        <div class="container-fluid">
+          <div class="header-wrap">
+            <form class="form-header" onsubmit="return false;" method="GET">
+              <!-- <input class="au-input au-input-xl" type="text" name="search"
+                placeholder="Search for tender ..." />
+              <button class="au-btn-submit" type="submit">
+                Search
+              </button> -->
+            </form>
+            <div class="cart-area d-n">
+                <div>
+                  <a *ngIf="!isLoggedin && isLoggedin != 1" class="btn" style="background-color: #ffffff; color: rgb(39, 30, 30);" routerLink="login">Login</a>
+                  <a *ngIf="isLoggedin && isLoggedin == 1" class="btn" style="background-color: #FE0000; color: white;" (click)="logout()">Logout</a>
+                </div>
+            </div>
+          </div>
+          <div class="account-wrap"></div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+    <div style="margin: 5% 2% 2% 2%;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

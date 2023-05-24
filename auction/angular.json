@@ -15,7 +15,8 @@
           "options": {
             "allowedCommonJsDependencies": [
               "rxjs-compat",
-              "sockjs-client"
+              "sockjs-client",
+              "stompjs"
            ],
             "outputPath": "dist/oction",
             "index": "src/index.html",
@@ -29,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },

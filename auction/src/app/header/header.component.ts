@@ -20,7 +20,5 @@ export class HeaderComponent {
 
   public logout() {
     sessionStorage.clear();
-    location.reload();
-    this.router.navigate(['']);
   }
 }
